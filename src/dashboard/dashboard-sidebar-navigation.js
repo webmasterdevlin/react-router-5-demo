@@ -13,7 +13,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Toolbar from "@material-ui/core/Toolbar";
 
-const DashboardSidebarNavigation = () => {
+const DashboardSidebarNavigation = ({ match }) => {
   const classes = useStyles();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const DashboardSidebarNavigation = () => {
           anchor="left"
         >
           <Toolbar style={{ width: "6rem", height: "auto" }}>
-            <Link to="/" className={classes.logoWithLink}>
+            <Link to={`${match.url}/`} className={classes.logoWithLink}>
               <img
                 className={"App-logo"}
                 width={"100%"}
@@ -46,7 +46,7 @@ const DashboardSidebarNavigation = () => {
           </Toolbar>
           <div className={classes.drawerContainer}>
             <List>
-              <Link className={classes.link} to={"/dashboard/inbox"}>
+              <Link className={classes.link} to={`${match.url}/inbox`}>
                 <ListItem button>
                   <ListItemIcon>
                     <InboxIcon />
@@ -56,7 +56,7 @@ const DashboardSidebarNavigation = () => {
               </Link>
               <Link
                 className={classes.link}
-                to={"/dashboard/settings-and-privacy"}
+                to={`${match.url}/settings-and-privacy`}
               >
                 <ListItem button>
                   <ListItemIcon>

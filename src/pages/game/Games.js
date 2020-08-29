@@ -15,7 +15,7 @@ const Games = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  const navigate = useHistory();
+  const history = useHistory();
 
   if (loading)
     return (
@@ -36,7 +36,7 @@ const Games = () => {
               </Typography>
 
               <Button
-                onClick={() => navigate("/game-details/" + game.id)}
+                onClick={() => history.push("/game-details/" + game.id)}
                 color={"primary"}
               >
                 See Details

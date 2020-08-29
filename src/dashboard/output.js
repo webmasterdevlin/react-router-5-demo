@@ -4,12 +4,12 @@ import DashboardDefaultContent from "./dashboard-default-content";
 import Inbox from "./inbox";
 import SettingsAndPrivacy from "./settings-and-privacy";
 
-const Output = ({ path }) => (
+const Output = ({ match }) => (
   <>
-    <Route path={`${path}/`} component={DashboardDefaultContent} exact />
-    <Route path={`${path}/inbox`} component={Inbox} />
+    <Route path={`${match.path}/`} component={DashboardDefaultContent} exact />
+    <Route path={`${match.path}/inbox`} component={Inbox} />
     <Route
-      path={`${path}/settings-and-privacy`}
+      path={`${match.path}/settings-and-privacy`}
       component={SettingsAndPrivacy}
     />
   </>
