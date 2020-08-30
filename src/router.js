@@ -20,21 +20,24 @@ const Router = () => {
         path={"/dashboard"}
         render={({ match: { path } }) => (
           <Dashboard>
-            <Route
-              exact
-              path={`${path}/`}
-              component={DashboardDefaultContent}
-            />
-            <Route path={`${path}/inbox`} component={Inbox} />
-            <Route
-              path={`${path}/settings-and-privacy`}
-              component={SettingsAndPrivacy}
-            />
-            <Redirect exact from={`${path}/*`} to={`${path}`} />
+            <Switch>
+              <Route
+                exact
+                path={path + "/"}
+                component={DashboardDefaultContent}
+              />
+              <Route path={`${path}/inbox`} component={Inbox} />
+              <Route
+                path={`${path}/settings-and-privacy`}
+                component={SettingsAndPrivacy}
+              />
+              <Redirect exact from={path + "/*"} to={path} />
+            </Switch>
           </Dashboard>
         )}
       />
-      <Route path="*" component={NotFound} />
+      <Route path="/not-found" component={NotFound} />
+      <Redirect exact from={"*"} to={"/not-found"} />
     </Switch>
   );
 };
