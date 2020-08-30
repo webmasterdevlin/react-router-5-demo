@@ -34,7 +34,10 @@ const DashboardSidebarNavigation = () => {
           }}
           anchor="left"
         >
-          <Toolbar style={{ width: "6rem", height: "auto" }}>
+          <Toolbar
+            style={{ width: "6rem", height: "auto" }}
+            className={classes.toolbar}
+          >
             <Link to={`${url}/`} className={classes.logoWithLink}>
               <img
                 className={"App-logo"}
@@ -43,7 +46,7 @@ const DashboardSidebarNavigation = () => {
                 src={logo}
                 alt="logo"
               />
-              React
+              React.js
             </Link>
           </Toolbar>
           <div className={classes.drawerContainer}>
@@ -99,7 +102,6 @@ const useStyles = makeStyles((theme) =>
     drawerContainer: {
       overflow: "auto",
     },
-    // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
