@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
+import { Redirect } from "react-router";
 import DashboardDefaultContent from "./dashboard/dashboard-default-content";
-
 import Games from "./pages/game/Games";
 import GameDetails from "./pages/game/GameDetails";
 import NotFound from "./pages/NotFound";
@@ -21,15 +21,16 @@ const Router = () => {
         render={({ match: { path } }) => (
           <Dashboard>
             <Route
+              exact
               path={`${path}/`}
               component={DashboardDefaultContent}
-              exact
             />
             <Route path={`${path}/inbox`} component={Inbox} />
             <Route
               path={`${path}/settings-and-privacy`}
               component={SettingsAndPrivacy}
             />
+            <Redirect exact from={`${path}/*`} to={`${path}`} />
           </Dashboard>
         )}
       />

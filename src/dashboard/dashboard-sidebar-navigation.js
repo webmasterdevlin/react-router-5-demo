@@ -19,7 +19,7 @@ const DashboardSidebarNavigation = () => {
   const { url } = useRouteMatch();
 
   useEffect(() => {
-    alert("Rendering Dashboard Sidebar Navigation");
+    // alert("Rendering Dashboard Sidebar Navigation");
   }, []);
 
   return (
