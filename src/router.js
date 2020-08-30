@@ -18,8 +18,8 @@ const Router = () => {
       <Route path={"/game-details/:id"} component={GameDetails} />
       <Route
         path={"/dashboard"}
-        render={({ match: { url, path } }) => (
-          <Dashboard url={url}>
+        render={({ match: { path } }) => (
+          <Dashboard>
             <Route
               path={`${path}/`}
               component={DashboardDefaultContent}
@@ -37,4 +37,5 @@ const Router = () => {
     </Switch>
   );
 };
+
 export default Router;

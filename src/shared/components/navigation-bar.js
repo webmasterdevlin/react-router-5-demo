@@ -9,6 +9,7 @@ import Box from "@material-ui/core/Box";
 export default function NavigationBar() {
   const classes = useStyles();
   const [login, setLogin] = useState(false);
+
   return (
     <AppBar position="static" className={classes.appBar}>
       <Box
@@ -44,9 +45,6 @@ export default function NavigationBar() {
 
 const useStyles = makeStyles((theme) =>
   createStyles({
-    menuButton: {
-      marginRight: theme.spacing(2),
-    },
     title: {
       marginRight: "2rem",
     },

@@ -12,9 +12,11 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import Toolbar from "@material-ui/core/Toolbar";
+import { useRouteMatch } from "react-router";
 
-const DashboardSidebarNavigation = ({ url }) => {
+const DashboardSidebarNavigation = () => {
   const classes = useStyles();
+  const { url } = useRouteMatch();
 
   useEffect(() => {
     alert("Rendering Dashboard Sidebar Navigation");

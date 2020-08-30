@@ -2,7 +2,7 @@ import React from "react";
 import DashboardSidebarNavigation from "./dashboard-sidebar-navigation";
 import { Grid } from "@material-ui/core";
 
-const Dashboard = ({ url, children }) => {
+const Dashboard = ({ children }) => {
   return (
     <Grid
       container
@@ -10,7 +10,7 @@ const Dashboard = ({ url, children }) => {
       justify="flex-start"
       alignItems="flex-start"
     >
-      <DashboardSidebarNavigation url={url} />
+      <DashboardSidebarNavigation />
       {children}
     </Grid>
   );
